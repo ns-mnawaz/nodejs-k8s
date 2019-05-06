@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: node-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+      - name: node-app
+        image: mirnawaz/node-k8s:1.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000

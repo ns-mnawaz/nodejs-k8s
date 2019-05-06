@@ -1,0 +1,15 @@
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names 
+
+[alt_names]
+IP = 10.96.12.102
+DNS.1 = mongod-0.mongodb-service
+DNS.2 = mongod-0.mongodb-service.default.svc.cluster.local
+DNS.3 = mongod-1.mongodb-service
+DNS.4 = mongod-1.mongodb-service.default.svc.cluster.local
+DNS.5 = mongod-2.mongodb-service
+DNS.6 = mongod-2.mongodb-service.default.svc.cluster.local
+DNS.7 = master.mongo 
+DNS.8 = localhost
