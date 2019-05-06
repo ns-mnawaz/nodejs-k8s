@@ -107,5 +107,3 @@ var server = http.createServer(function(req, res){
 server.listen(8000);
 
 console.log('server started at : 8000');
-
-// kubectl expose deployment node-app --type=LoadBalancer --port=8000 --target-port=8000 --external-ip=192.168.56.112
