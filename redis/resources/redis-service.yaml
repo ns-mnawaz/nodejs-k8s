@@ -6,7 +6,7 @@ spec:
   ports:
     - port: 6377
       name: redis
-  clusterIP: None
+  clusterIP: 10.96.12.105
   selector:
     app: redis
 ---
@@ -57,7 +57,10 @@ spec:
               name: redis
           env:
             - name: REDIS_PASSWORD
-              value: "abcd@1234"
+              valueFrom: 
+                secretKeyRef:
+                  name: redis-config
+                  key: password
           volumeMounts:
             - name: redis-storage
               mountPath: /data

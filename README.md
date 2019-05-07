@@ -150,3 +150,9 @@ kubectl expose deployment node-app --type=LoadBalancer --port=8000 --target-port
 curl http://192.168.56.112:8000/
 ```
 Should return current time.
+
+## Check mongo connections
+```
+kubectl exec -it mongod-0 -- /bin/bash
+mongo --username main_admin --password abcd@1234 --authenticationDatabase admin --ssl --sslPEMKeyFile /data/ssl/server.pem  --sslCAFile /data/ssl/ca.pem --host mongod-0.mongodb-service
+```

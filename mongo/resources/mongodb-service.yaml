@@ -8,7 +8,7 @@ spec:
   ports:
   - port: 27017
     targetPort: 27017
-  clusterIP: None
+  clusterIP: 10.96.12.103
   selector:
     role: mongo
 ---
@@ -99,7 +99,7 @@ spec:
       volumes:
         - name: secrets-volume
           secret:
-            secretName: shared-bootstrap-data
+            secretName: mongo-shared-secret
             defaultMode: 256
         - name: mongo-ssl-volumne
           secret:

@@ -11,7 +11,7 @@ cd ../scripts
 # Create keyfile for the MongoD cluster as a Kubernetes shared secret
 TMPFILE=$(mktemp)
 /usr/bin/openssl rand -base64 741 > $TMPFILE
-kubectl create secret generic shared-bootstrap-data --from-file=internal-auth-mongodb-keyfile=$TMPFILE
+kubectl create secret generic mongo-shared-secret --from-file=internal-auth-mongodb-keyfile=$TMPFILE
 
 # Create mongodb service with mongod stateful-set
 # TODO: Temporarily added no-valudate due to k8s 1.8 bug: https://github.com/kubernetes/kubernetes/issues/53309
