@@ -73,15 +73,18 @@ statefulset.apps/mongod   3/3     9m17s
 statefulset.apps/nats     3/3     6m21s
 statefulset.apps/redis    1/1     7m9s
 ```
-## Deploy sample node project with mongo, redis and nats connections
+## Build docker sample node project with mongo, redis and nats connections
 ```
 docker build -t node-k8s .
 docker tag node-k8s mirnawaz/node-k8s:<tag> 
 docker push mirnawaz/node-k8s
 ```
 check connections
+
+## Deploy node sample app 
 ```
-kubectl logs -f pod/node-app-7d9cd4469b-8zzw5
+kubectl apply -f deploy.yaml 
+kubectl logs -f pod/node-app-*
 ```
 Output below
 ```
